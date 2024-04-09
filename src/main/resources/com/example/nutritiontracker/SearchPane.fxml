@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="810.0" prefWidth="1150.0" style="-fx-background-color: #c3dbcb;" stylesheets="@application.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.nutritiontracker.FoodDatabaseController">
+   <ImageView fitHeight="810.0" fitWidth="1150.0" layoutX="16.0" layoutY="247.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+         <Image url="@Images/Main_background_2-removebg.png" />
+      </image>
+   </ImageView>
+   <Label layoutX="301.0" layoutY="57.0" prefHeight="77.0" prefWidth="510.0" text="Search Food Items">
+      <font>
+         <Font name="Microsoft YaHei Light" size="54.0" />
+      </font>
+   </Label>
+   <TextField fx:id="searchTextField" layoutX="372.0" layoutY="181.0" prefHeight="44.0" prefWidth="438.0" promptText="Search Database" />
+   <Button fx:id="SearchButton" layoutX="819.0" layoutY="181.0" mnemonicParsing="false" onAction="#handleSearchAction" prefHeight="25.0" prefWidth="99.0" text="Search" />
+   <ListView fx:id="foodItemList" layoutX="92.0" layoutY="288.0" prefHeight="400.0" prefWidth="360.0" />
+   <TextArea fx:id="macronutrientDetailsTextArea" layoutX="485.0" layoutY="288.0" prefHeight="400.0" prefWidth="406.0" stylesheets="@application.css" />
+   <TextField fx:id="weightTextField" layoutX="183.0" layoutY="181.0" prefHeight="44.0" prefWidth="143.0" promptText="Weight in Grams" />
+   <Button fx:id="addButton" layoutX="1059.0" layoutY="443.0" mnemonicParsing="false" onAction="#handleAddAction" text="Add" />
+   <RadioButton fx:id="radioBreakfast" layoutX="918.0" layoutY="347.0" mnemonicParsing="false" prefHeight="81.0" prefWidth="143.0" text="Breakfast">
+      <toggleGroup>
+         <ToggleGroup fx:id="mealToggleGroup" />
+      </toggleGroup>
+      <font>
+         <Font size="18.0" />
+      </font></RadioButton>
+   <RadioButton fx:id="radioLunch" layoutX="918.0" layoutY="425.0" mnemonicParsing="false" prefHeight="81.0" prefWidth="114.0" text="Lunch" toggleGroup="$mealToggleGroup">
+      <font>
+         <Font size="18.0" />
+      </font></RadioButton>
+   <RadioButton fx:id="radioDinner" layoutX="918.0" layoutY="506.0" mnemonicParsing="false" prefHeight="81.0" prefWidth="114.0" text="Dinner" toggleGroup="$mealToggleGroup">
+      <font>
+         <Font size="18.0" />
+      </font></RadioButton>
+   <Label fx:id="confirmationMessageLabel" layoutX="408.0" layoutY="745.0" prefHeight="17.0" prefWidth="223.0">
+      <font>
+         <Font name="System Bold" size="22.0" />
+      </font>
+   </Label>
+   <Label fx:id="confirmationLabel" layoutX="206.0" layoutY="761.0" prefHeight="32.0" prefWidth="628.0">
+      <font>
+         <Font name="System Bold" size="22.0" />
+      </font>
+   </Label>
+</AnchorPane>

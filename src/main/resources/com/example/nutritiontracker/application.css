@@ -1,0 +1,207 @@
+.button {
+    -fx-background-color: #148c42;
+    -fx-background-radius: 30 0 0 30;
+    -fx-text-fill: white; /* Ensures text color is white */
+    -fx-padding: 10 20; /* Adds padding to the button */
+    -fx-font-size: 16px; /* Adjusts font size */
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0); /* Adds a shadow effect */
+}
+
+.button:hover {
+    -fx-background-color: #306141;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0); /* Keeps the shadow effect */
+}
+
+.button:pressed {
+    -fx-background-color: #0d331a;
+    -fx-effect: innershadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0); /* Changes to an inner shadow to simulate depth */
+}
+.list-view {
+    -fx-background-radius: 10; /* Rounded corners */
+    -fx-border-radius: 10; /* Ensure the border is also rounded */
+    -fx-border-width: 2; /* Bold lines for the border */
+    -fx-border-color: black; /* Color of the border */
+}
+
+.list-cell {
+    -fx-padding: 10px; /* Space inside each cell */
+    -fx-background-color: transparent; /* Avoid overriding rounded corners */
+    -fx-font-weight: bold; /* Bold text */
+    -fx-font-size: 16px; /* Larger text for better readability */
+    -fx-text-fill: black; /* Color of the text */
+}
+
+/* Hover effect for list cells */
+.list-cell:filled:hover {
+    -fx-background-color: lightgray; /* Change as needed */
+}
+
+/* Selected cell effect */
+.list-cell:filled:selected {
+    -fx-background-color: #0096C9; /* Change as needed */
+    -fx-text-fill: white;
+}
+.text-field {
+    -fx-background-color: white, linear-gradient(to bottom, #fafafa, #f4f4f4);
+    -fx-background-insets: 0, 1;
+    -fx-background-radius: 15; /* Rounded edges */
+    -fx-padding: 10px; /* Padding inside the text field */
+    -fx-text-fill: black; /* Text color */
+    -fx-font-weight: bold; /* Bold text */
+    -fx-font-size: 14px; /* Size of the text */
+    -fx-border-color: #c4c4c4; /* Color of the border */
+    -fx-border-radius: 15; /* Rounded border edges to match the background */
+    -fx-border-width: 2px; /* Width of the border */
+}
+
+.text-field:focused {
+    -fx-border-color: #90caf9; /* Color of the border when the text field is focused */
+    -fx-border-width: 2px; /* Width of the border when focused */
+    -fx-background-color: white;
+}
+.text-area {
+    -fx-background-color: white;
+    -fx-background-insets: 0; /* Adjust as needed */
+    -fx-background-radius: 5; /* Adjust for rounded corners */
+    -fx-padding: 6px; /* Inner padding */
+    -fx-text-fill: #333; /* Text color */
+    -fx-font-size: 12pt; /* Adjust text size as needed */
+    -fx-border-color: black; /* Make the border color black or any dark color you prefer */
+    -fx-border-width: 2px; /* Increase the border width for visibility */
+    -fx-border-radius: 5; /* Ensure the border radius matches the background radius */
+}
+
+.text-area:focused {
+    -fx-border-color: deepskyblue; /* Color for focused state */
+    -fx-border-width: 2px; /* Keep the border width consistent */
+}
+.radio-button {
+    -fx-padding: 5px 10px;
+    -fx-background-color: transparent;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 5, 0, 0, 0);
+}
+
+.radio-button .radio, .radio-button .dot {
+    -fx-fill: #4CAF50;
+}
+
+.radio-button:selected .dot {
+    -fx-background-color: #45a049;
+}
+
+.radio-button:focused > .box {
+    -fx-stroke: #4CAF50; /* Focus color */
+}
+
+.radio-button:hover > .box {
+    -fx-stroke-width: 2;
+    -fx-stroke: #45a049; /* Hover effect */
+}
+
+/* General chart background */
+.chart {
+    -fx-background-color: #ffffff;
+}
+
+/* PieChart specifics */
+.pie-chart {
+    -fx-font-size: 14px;
+    -fx-font-family: "Arial";
+}
+
+.pie-chart .chart-title {
+    -fx-text-fill: #333333;
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+}
+
+.pie-chart .label {
+    -fx-fill: white;
+    -fx-font-size: 12px;
+}
+
+.pie-chart .pie-label-line {
+    -fx-stroke: #666666;
+}
+
+/* BarChart specifics */
+.bar-chart {
+    -fx-font-size: 14px;
+    -fx-font-family: "Arial";
+}
+
+.bar-chart .chart-title {
+    -fx-text-fill: #333333;
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+}
+
+.bar-chart .axis-label {
+    -fx-text-fill: #666666;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+.bar-chart .axis {
+    -fx-tick-label-fill: #666666;
+    -fx-tick-mark-visible: false;
+}
+
+.bar-chart .chart-legend {
+    -fx-background-color: #ffffff, #ffffff;
+    -fx-padding: 10px;
+}
+
+.bar-chart .data .default-color0.chart-bar {
+    -fx-bar-fill: #1f77b4;
+}
+
+.bar-chart .data .default-color1.chart-bar {
+    -fx-bar-fill: #ff7f0e;
+}
+
+.bar-chart .data .default-color2.chart-bar {
+    -fx-bar-fill: #2ca02c;
+}
+
+/* General series colors */
+.default-color0.chart-series-line, .default-color0.chart-line-symbol {
+    -fx-stroke: #1f77b4;
+    -fx-fill: #1f77b4;
+}
+
+.default-color1.chart-series-line, .default-color1.chart-line-symbol {
+    -fx-stroke: #ff7f0e;
+    -fx-fill: #ff7f0e;
+}
+
+.default-color2.chart-series-line, .default-color2.chart-line-symbol {
+    -fx-stroke: #2ca02c;
+    -fx-fill: #2ca02c;
+}
+/*Login FXML*/
+
+#signlbl {
+	-fx-font-family: "Segoe UI";
+	-fx-font-size: 15.0px;
+	-fx-background-radius: 15.0px;
+}
+#signlbl:hover {
+	    -fx-effect: dropshadow(three-pass-box, rgba(16, 48, 44, 0.5), 8.0, 0.0, 0.0, 0.0);
+
+}
+signinbutton {
+  -fx-background-color: #148c42;
+  -fx-background-radius: 15.0px;
+  -fx-border-width: 0.0px;
+  -fx-font-size: 18.0px;
+}
+signinbutton:hover {
+  -fx-background-color: #306141;
+  -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0); /* Keeps the shadow effect */
+}
+
+signinbutton:pressed {
+  -fx-background-color: #0d331a;
+  -fx-effect: innershadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0); /* Changes to an inner shadow to simulate depth */
+}

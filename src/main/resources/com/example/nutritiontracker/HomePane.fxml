@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="810.0" prefWidth="1150.0" style="-fx-background-color: #c3dbcb;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.nutritiontracker.HomeController">
+   <children>
+      <Pane layoutX="30.0" layoutY="36.0" prefHeight="737.0" prefWidth="540.0" style="-fx-background-color: #5d996a; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-width: 2; -fx-border-color: white;">
+         <children>
+            <Text layoutX="79.0" layoutY="722.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Protein:" wrappingWidth="91.13671875">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Text>
+         </children></Pane>
+      <Pane layoutX="590.0" layoutY="36.0" prefHeight="737.0" prefWidth="540.0" style="-fx-background-color: #5d996a; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-width: 2; -fx-border-color: white;" />
+      <PieChart fx:id="pieChart" layoutX="30.0" layoutY="86.0" prefHeight="489.0" prefWidth="560.0" />
+      <Label fx:id="nomacroLabel" layoutX="148.0" layoutY="202.0" prefHeight="291.0" prefWidth="324.0" wrapText="true">
+         <font>
+            <Font size="45.0" />
+         </font>
+      </Label>
+      <Text layoutX="103.0" layoutY="680.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-fill: #ffffff;" text="Calories:" wrappingWidth="91.13671875">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Text>
+      <Text layoutX="349.0" layoutY="759.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fat:" wrappingWidth="91.13671875">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Text>
+      <Text layoutX="349.0" layoutY="679.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-fill: #FFFFFF;" text="Carbs:" wrappingWidth="91.13671875">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Text>
+      <Label fx:id="totalcaloriesLabel" layoutX="194.0" layoutY="656.0" prefHeight="30.0" prefWidth="91.0">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="totalcarbsLabel" layoutX="430.0" layoutY="657.0" prefHeight="30.0" prefWidth="91.0">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="totalfatLabel" layoutX="406.0" layoutY="736.0" prefHeight="30.0" prefWidth="91.0">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="totalproteinLabel" layoutX="194.0" layoutY="737.0" prefHeight="30.0" prefWidth="91.0">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <BarChart fx:id="totalcaloriesChart" layoutX="630.0" layoutY="119.0" prefHeight="473.0" prefWidth="500.0">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" />
+        </yAxis>
+      </BarChart>
+      <Text layoutX="587.0" layoutY="370.0" rotate="-90.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-fill: #fafafa;" text="Calories">
+         <font>
+            <Font name="System Bold" size="23.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>
