@@ -1,0 +1,105 @@
+/*Login FXML*/
+
+#toolslbl {
+	-fx-font-family: "Segoe UI";
+	-fx-font-size: 12.0px;
+	-fx-background-radius: 15.0px;
+}
+#toolslbl:hover {
+	    -fx-effect: dropshadow(three-pass-box, rgba(16, 48, 44, 0.5), 8.0, 0.0, 0.0, 0.0);
+
+}
+#signinbutton {
+  -fx-background-color: #148c42;
+  -fx-background-radius: 15.0px;
+  -fx-border-width: 0.0px;
+  -fx-font-size: 15.0px;
+  color: white;
+}
+#signinbutton:hover {
+  -fx-background-color: #306141;
+  -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0); /* Keeps the shadow effect */
+}
+
+#signinbutton:pressed {
+  -fx-background-color: #0d331a;
+  -fx-effect: innershadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0); /* Changes to an inner shadow to simulate depth */
+}
+.chart-line-symbol { /* this will style the symbols on the line chart */
+  -fx-background-color: #ff0000, white;
+  -fx-background-insets: 0, 2;
+  -fx-background-radius: 5px;
+  -fx-padding: 5px;
+}
+
+.chart {
+  -fx-font-size: 16px; /* this increases the font size */
+}
+
+.axis-label {
+  -fx-font-weight: bold; /* this makes the label text bold */
+  -fx-text-fill: #333333; /* this changes the color of the label text */
+}
+
+.axis-tick-label {
+  -fx-font-size: 12px; /* increases the font size of the tick labels */
+  -fx-rotation: 45; /* rotates the tick labels, if needed */
+  -fx-text-fill: #333333; /* this changes the color of the tick text */
+}
+#searchButton {
+  -fx-background-color: #148c42;
+  -fx-background-radius: 15.0px;
+  -fx-border-width: 0.0px;
+  -fx-font-size: 18.0px;
+  -fx-text-fill: white;
+}
+#searchButton:hover {
+  -fx-background-color: #306141;
+  -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0); /* Keeps the shadow effect */
+}
+
+Button:pressed {
+  -fx-background-color: #0d331a;
+  -fx-effect: innershadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0); /* Changes to an inner shadow to simulate depth */
+}
+.list-cell {
+    -fx-padding: 10px; /* Space inside each cell */
+    -fx-background-color: transparent; /* Avoid overriding rounded corners */
+    -fx-font-weight: bold; /* Bold text */
+    -fx-font-size: 8px; /* Larger text for better readability */
+    -fx-text-fill: black; /* Color of the text */
+
+}
+#gridweight {
+    -fx-padding: 8px;  /* Padding around the GridPane */
+    -fx-hgap: 8px;     /* Horizontal gap between columns */
+    -fx-vgap: 8px;     /* Vertical gap between rows */
+    -fx-background-color: #f4f4f4; /* Light gray background */
+    -fx-border-color: #333;        /* Dark gray border */
+    -fx-border-width: 2px;         /* Border width */
+    -fx-border-radius: 5px;        /* Rounded corners for the border */
+    -fx-background-radius: 5px;    /* Rounded corners for the background */
+}
+
+#gridweight .label {
+    -fx-font-size: 16px;         /* Font size for labels */
+    -fx-font-weight: bold;       /* Make the font bold */
+    -fx-text-fill: #333;         /* Dark gray text color */
+}
+
+#gridweight .text-field, #gridweight .combo-box, #gridweight .radio-button {
+    -fx-font-size: 14px;         /* Font size for input fields and radio buttons */
+    -fx-padding: 4px 4px;        /* Padding inside the fields */
+}
+
+#gridweight .button {
+    -fx-background-color: #148c42; /* Green background for buttons */
+    -fx-text-fill: white;          /* White text */
+    -fx-font-size: 14px;           /* Font size for buttons */
+    -fx-background-radius: 15px;   /* Rounded corners for buttons */
+}
+
+#gridweight .button:hover {
+    -fx-background-color: #306141; /* Darker green when hovered */
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0); /* Shadow effect on hover */
+}

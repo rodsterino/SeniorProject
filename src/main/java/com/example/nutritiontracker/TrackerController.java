@@ -3,11 +3,11 @@ package com.example.nutritiontracker;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.ListView;
+import javafx.scene.control.*;
 
 import java.sql.*;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class TrackerController {
 
@@ -19,10 +19,41 @@ public class TrackerController {
     private ListView<String> dinnerListView;
     @FXML
     private DatePicker datePicker; // Ensure this is correctly linked with your FXML
+    @FXML
+    private TextField waterIntakeField;
+    @FXML
+    private Button logWaterIntakeButton;
+    @FXML
+    private ProgressBar waterProgressBar;
 
-    public void initialize() {
+    private int dailyWaterGoal = 8; // Daily water intake goal (in glasses)
+    private int totalWaterConsumed = 0; // Total glasses of water consumed
+
+    @FXML
+    private void initialize() {
         datePicker.setValue(LocalDate.now()); // Initialize the datePicker to today's date
         onDateChange(); // Load data based on the current date
+
+        // Initialize water intake tracker
+        waterProgressBar.setProgress(0); // Initialize progress bar
+        waterIntakeField.setPromptText("Enter glasses of water consumed"); // Set prompt text
+        logWaterIntakeButton.setOnAction(e -> logWaterIntake()); // Attach event handler
+    }
+
+    private void logWaterIntake() {
+        try {
+            int consumed = Integer.parseInt(waterIntakeField.getText());
+            totalWaterConsumed += consumed;
+            updateWaterProgressBar();
+        } catch (NumberFormatException e) {
+            System.out.println("Please enter a valid number of glasses.");
+        }
+    }
+
+    // Method to update the water intake progress bar
+    private void updateWaterProgressBar() {
+        double progress = (double) totalWaterConsumed / dailyWaterGoal;
+        waterProgressBar.setProgress(progress);
     }
 
     private Connection connectDB() {
@@ -51,24 +82,17 @@ public class TrackerController {
         ObservableList<String> lunchItems = FXCollections.observableArrayList();
         ObservableList<String> dinnerItems = FXCollections.observableArrayList();
 
-        // Fetch all records for the current user, without filtering by date in SQL
-        String sql = "SELECT * FROM Tracker WHERE UserID = " + LoginController.currentUserId;
+        // Fetch all records for the current user, filtering by date
+        String sql = "SELECT * FROM Tracker WHERE UserID = " + LoginController.currentUserId + " AND FORMAT(DateAdded, 'MM/dd/yyyy') = ?";
 
         try (Connection conn = connectDB();
-             Statement stmt = conn.createStatement();
-             ResultSet rs = stmt.executeQuery(sql)) {
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
 
-            while (rs.next()) {
-                // Extract the DateAdded field from the database
-                Timestamp timestamp = rs.getTimestamp("DateAdded");
-                LocalDate dateAdded = null;
-                if (timestamp != null) { // Add this null check
-                    dateAdded = timestamp.toLocalDateTime().toLocalDate();
-                    // The rest of your code
-                }
+            // Set the selected date as parameter
+            pstmt.setString(1, selectedDate.format(DateTimeFormatter.ofPattern("MM/dd/yyyy")));
 
-                // Continue only if the dateAdded matches the selectedDate
-                if (dateAdded.equals(selectedDate)) {
+            try (ResultSet rs = pstmt.executeQuery()) {
+                while (rs.next()) {
                     String foodItem = rs.getString("FoodItem");
                     double weight = rs.getDouble("Weight");
                     double calories = rs.getDouble("Calories");
@@ -92,6 +116,11 @@ public class TrackerController {
                     }
                 }
             }
+
+            // Calculate the total water intake for the selected date
+            int totalWaterConsumedForDay = calculateTotalWaterIntakeForDay(conn, selectedDate);
+            totalWaterConsumed = totalWaterConsumedForDay;
+            updateWaterProgressBar();
         } catch (SQLException e) {
             System.out.println("Error loading meal data: " + e.getMessage());
         }
@@ -99,5 +128,23 @@ public class TrackerController {
         breakfastListView.setItems(breakfastItems);
         lunchListView.setItems(lunchItems);
         dinnerListView.setItems(dinnerItems);
+    }
+
+    private int calculateTotalWaterIntakeForDay(Connection conn, LocalDate selectedDate) throws SQLException {
+        int totalWaterIntake = 0;
+        String sql = "SELECT SUM(CAST(WaterIntake AS DOUBLE)) AS totalWaterIntake FROM Tracker WHERE UserID = ? AND FORMAT(DateAdded, 'MM/dd/yyyy') = ?";
+
+        try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setInt(1, LoginController.currentUserId);
+            pstmt.setString(2, selectedDate.format(DateTimeFormatter.ofPattern("MM/dd/yyyy")));
+
+            try (ResultSet rs = pstmt.executeQuery()) {
+                if (rs.next()) {
+                    totalWaterIntake = rs.getInt("totalWaterIntake");
+                }
+            }
+        }
+
+        return totalWaterIntake;
     }
 }

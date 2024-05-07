@@ -2,7 +2,7 @@
 
 #signlbl {
 	-fx-font-family: "Segoe UI";
-	-fx-font-size: 15.0px;
+	-fx-font-size: 12.0px;
 	-fx-background-radius: 15.0px;
 }
 #signlbl:hover {
@@ -13,7 +13,7 @@
   -fx-background-color: #148c42;
   -fx-background-radius: 15.0px;
   -fx-border-width: 0.0px;
-  -fx-font-size: 18.0px;
+  -fx-font-size: 15.0px;
   color: white;
 }
 #signinbutton:hover {

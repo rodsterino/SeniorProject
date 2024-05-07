@@ -14,7 +14,7 @@
    <left>
       <Pane maxHeight="1.7976931348623157E308" maxWidth="227.0" minHeight="550.0" minWidth="200.0" prefHeight="550.0" prefWidth="227.0" style="-fx-background-color: #10302c;" stylesheets="@application.css" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="homeButton" layoutX="1.0" layoutY="30.0" mnemonicParsing="false" onAction="#changePane" prefHeight="75.0" prefWidth="224.0" text="Home" textFill="WHITE">
+            <Button fx:id="homeButton" layoutX="2.0" layoutY="24.0" mnemonicParsing="false" onAction="#changePane" prefHeight="75.0" prefWidth="224.0" text="Home" textFill="WHITE">
                <font>
                   <Font size="20.0" />
                </font>
@@ -25,7 +25,7 @@
                   <URL value="@application.css" />
                </stylesheets>
             </Button>
-            <Button fx:id="searchButton" layoutX="1.0" layoutY="130.0" mnemonicParsing="false" onAction="#changePane" prefHeight="75.0" prefWidth="224.0" text="Search " textAlignment="RIGHT" textFill="#fcfcfc">
+            <Button fx:id="searchButton" layoutX="1.0" layoutY="107.0" mnemonicParsing="false" onAction="#changePane" prefHeight="75.0" prefWidth="224.0" text="Search " textAlignment="RIGHT" textFill="#fcfcfc">
                <font>
                   <Font size="20.0" />
                </font>
@@ -36,7 +36,7 @@
                   <URL value="@application.css" />
                </stylesheets>
             </Button>
-            <Button fx:id="recipeButton" layoutX="1.0" layoutY="230.0" mnemonicParsing="false" onAction="#changePane" prefHeight="75.0" prefWidth="224.0" text="Recipe" textFill="WHITE">
+            <Button fx:id="recipeButton" layoutX="1.0" layoutY="191.0" mnemonicParsing="false" onAction="#changePane" prefHeight="75.0" prefWidth="224.0" text="Recipe" textFill="WHITE">
                <font>
                   <Font size="20.0" />
                </font>
@@ -47,7 +47,7 @@
                   <URL value="@application.css" />
                </stylesheets>
             </Button>
-            <Button fx:id="trackerButton" layoutX="1.0" layoutY="330.0" mnemonicParsing="false" onAction="#changePane" prefHeight="75.0" prefWidth="224.0" text="Tracker" textFill="WHITE">
+            <Button fx:id="trackerButton" layoutX="2.0" layoutY="274.0" mnemonicParsing="false" onAction="#changePane" prefHeight="75.0" prefWidth="224.0" text="Tracker" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
@@ -58,21 +58,58 @@
                   <URL value="@application.css" />
                </stylesheets>
             </Button>
-            <ImageView fitHeight="312.0" fitWidth="275.0" layoutX="-24.0" layoutY="515.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="312.0" fitWidth="275.0" layoutX="-23.0" layoutY="499.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Images/NT_logo.png" />
                </image>
             </ImageView>
-            <Label layoutX="21.0" layoutY="453.0" prefHeight="73.0" prefWidth="206.0" style="-fx-text-fill: #fafafa;" text="Nutrition Tracker">
+            <Label layoutX="26.0" layoutY="426.0" prefHeight="73.0" prefWidth="206.0" style="-fx-text-fill: #fafafa;" text="Nutrition Tracker">
                <font>
                   <Font name="System Bold" size="23.0" />
                </font>
             </Label>
-            <Label layoutX="92.0" layoutY="515.0" style="-fx-text-fill: #fafafa;" text="App">
+            <Label layoutX="97.0" layoutY="488.0" style="-fx-text-fill: #fafafa;" text="App">
                <font>
                   <Font name="System Bold" size="22.0" />
                </font>
             </Label>
+            <Button fx:id="ToolsButton" layoutX="1.0" layoutY="356.0" mnemonicParsing="false" onAction="#changePane" prefHeight="75.0" prefWidth="224.0" text="Tools" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+               <stylesheets>
+                  <URL value="@application.css" />
+                  <URL value="@application.css" />
+                  <URL value="@application.css" />
+                  <URL value="@application.css" />
+               </stylesheets>
+            </Button>
+            <ImageView fitHeight="55.0" fitWidth="52.0" layoutX="25.0" layoutY="119.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/icons8-search-64.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="45.0" fitWidth="60.0" layoutX="26.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/home-removebg.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="64.0" fitWidth="71.0" layoutX="19.0" layoutY="362.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/tools-removebg.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="47.0" fitWidth="55.0" layoutX="25.0" layoutY="288.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/icons8-notes-64.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="54.0" fitWidth="52.0" layoutX="25.0" layoutY="205.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/icons8-fruits-64.png" />
+               </image>
+            </ImageView>
+            <Button id="buttonlogout" fx:id="logoutButton" layoutX="67.0" layoutY="740.0" mnemonicParsing="false" onAction="#handleLogout" prefHeight="49.0" prefWidth="95.0" stylesheets="@application.css" text="Logout" />
          </children>
       </Pane>
    </left>

@@ -4,14 +4,18 @@ import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Optional;
 
 public class NutritionDashboard extends Application {
     @FXML
@@ -50,6 +54,10 @@ public class NutritionDashboard extends Application {
     @FXML
     private Button trackerButton;
     @FXML
+    private Button ToolsButton;
+    @FXML
+    private Button logoutButton;
+    @FXML
     void changePane(ActionEvent event) {
         String buttonText = "";
         try {
@@ -63,10 +71,28 @@ public class NutritionDashboard extends Application {
         }
     }
     public void setWelcomeMessage(String userName) {
-        welcomeLabel.setText("Welcome," + userName + "!\n" +
-                "Eat Well, Live Well");
+        welcomeLabel.setText("Welcome,"+userName+"\nEat Well, Live Well");
 
 
     }
+    @FXML
+    private void handleLogout() {
+        Alert confirmAlert = new Alert(Alert.AlertType.CONFIRMATION, "Are you sure you want to log out?", ButtonType.YES, ButtonType.NO);
+        confirmAlert.setTitle("Confirm Logout");
+        confirmAlert.setHeaderText(null); // No header text
 
+        Optional<ButtonType> result = confirmAlert.showAndWait();
+        if (result.isPresent() && result.get() == ButtonType.YES) {
+            try {
+                // Load the login view
+                Node node = (Node) logoutButton;
+                Stage stage = (Stage) node.getScene().getWindow();
+                Scene scene = new Scene(FXMLLoader.load(getClass().getResource("Login.fxml")));
+                stage.setScene(scene);
+                stage.show();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        } // If 'No' or closed, do nothing
+    }
 }

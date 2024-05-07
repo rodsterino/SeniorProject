@@ -100,7 +100,7 @@ public class LoginController {
             NutritionDashboard controller = loader.getController();
             controller.setWelcomeMessage(loggedInUserName); // This line is now valid because the method exists in NutritionDashboard
 
-            Scene mainPaneScene = new Scene(mainPaneRoot, 1400, 800);
+            Scene mainPaneScene = new Scene(mainPaneRoot, 1400, 820);
             Stage stage = (Stage) loginButton.getScene().getWindow();
             stage.setScene(mainPaneScene);
             stage.show();

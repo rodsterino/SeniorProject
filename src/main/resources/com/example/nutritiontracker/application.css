@@ -179,29 +179,13 @@
     -fx-stroke: #2ca02c;
     -fx-fill: #2ca02c;
 }
-/*Login FXML*/
-
-#signlbl {
-	-fx-font-family: "Segoe UI";
-	-fx-font-size: 15.0px;
-	-fx-background-radius: 15.0px;
-}
-#signlbl:hover {
-	    -fx-effect: dropshadow(three-pass-box, rgba(16, 48, 44, 0.5), 8.0, 0.0, 0.0, 0.0);
-
-}
-signinbutton {
-  -fx-background-color: #148c42;
-  -fx-background-radius: 15.0px;
-  -fx-border-width: 0.0px;
-  -fx-font-size: 18.0px;
-}
-signinbutton:hover {
-  -fx-background-color: #306141;
-  -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0); /* Keeps the shadow effect */
-}
-
-signinbutton:pressed {
-  -fx-background-color: #0d331a;
-  -fx-effect: innershadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0); /* Changes to an inner shadow to simulate depth */
+#buttonlogout {
+    -fx-background-color: red;
+    -fx-text-fill: white;
+    -fx-border-color: white;
+    -fx-border-width: 2px;
+    -fx-border-radius: 15px;
+    -fx-background-radius: 15px;
+    -fx-padding: 10px 20px;
+    -fx-font-size: 16px;  /* Increased from 14px to 16px */
 }

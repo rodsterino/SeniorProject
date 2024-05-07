@@ -74,4 +74,45 @@
 .text-area:focused {
     -fx-border-color: deepskyblue; /* Color for focused state */
     -fx-border-width: 2px; /* Keep the border width consistent */
+    -fx-background-radius: 10.0px;
+      -fx-border-width: 0.0px;
+      -fx-font-size: 15.0px;
+}
+.combo-box {
+    -fx-background-color: #148c42; /* Change this if you want a different background color */
+    -fx-background-radius: 10; /* This is what gives the rounded corners */
+    -fx-padding: 4px; /* Adjust padding if necessary */
+  /* Adjust font size if necessary */
+    -fx-font-size: 10px; /* Reduce font size if necessary */
+        -fx-min-width: 100px; /* Set the minimum width to make the box smaller */
+        -fx-min-height: 20px;
+}
+
+.combo-box .list-cell {
+    -fx-background-color: white; /* Ensures the background is white */
+    -fx-text-fill: black; /* Ensures the text is black or any color that is visible against the background */
+    -fx-padding: 5px 10px; /* Provides padding within each list cell */
+}
+
+.combo-box .arrow-button {
+    -fx-background-radius: 15;
+}
+
+.combo-box .arrow {
+    -fx-background-radius: 15;
+}
+.combo-box .list-view {
+    -fx-background-color: white; /* Ensures the background is white */
+}
+.progress-bar {
+    -fx-background-color: #e1e1e1; /* A light grey background for the whole progress bar */
+    -fx-background-insets: 0, 0, 1; /* Insets for the backgrounds */
+    -fx-background-radius: 5; /* Rounded corners for the background */
+    -fx-padding: 5px; /* Space around the bar */
+}
+
+.progress-bar .bar {
+    -fx-background-color: #68BBE3; /* A green color for the progress */
+    -fx-background-insets: 0.25em; /* Small inset to act as a buffer from the outer background */
+    -fx-background-radius: 3; /* Slightly less rounded than the outer background to fit within it */
 }

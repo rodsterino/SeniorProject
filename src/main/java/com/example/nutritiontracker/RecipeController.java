@@ -107,10 +107,10 @@ public class RecipeController {
                         JSONObject nutrients = recipeDetail.getJSONObject("totalNutrients");
                         List<String> nutrientList = new ArrayList<>();
                         if (nutrients.has("ENERC_KCAL")) {
-                            nutrientList.add("Calories: " + nutrients.getJSONObject("ENERC_KCAL").getDouble("quantity") + " kcal");
-                            nutrientList.add("Protein: " + nutrients.getJSONObject("PROCNT").getDouble("quantity") + " g");
-                            nutrientList.add("Fat: " + nutrients.getJSONObject("FAT").getDouble("quantity") + " g");
-                            nutrientList.add("Carbs: " + nutrients.getJSONObject("CHOCDF").getDouble("quantity") + " g");
+                            nutrientList.add(String.format("Calories: %.2f kcal", nutrients.getJSONObject("ENERC_KCAL").getDouble("quantity")));
+                            nutrientList.add(String.format("Protein: %.2f g", nutrients.getJSONObject("PROCNT").getDouble("quantity")));
+                            nutrientList.add(String.format("Fat: %.2f g", nutrients.getJSONObject("FAT").getDouble("quantity")));
+                            nutrientList.add(String.format("Carbs: %.2f g", nutrients.getJSONObject("CHOCDF").getDouble("quantity")));
                         }
 
 
